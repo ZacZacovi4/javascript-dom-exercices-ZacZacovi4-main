@@ -14,3 +14,19 @@ div_description_boutique_element.appendChild(new_description_boutique_element);
 
 const span_element = document.querySelector("#blague_de_roger_le_sorcier");
 span_element.remove();
+
+// exo 4 Archibald n'est pas là, appelons le !
+
+const call_archibald_element = document.querySelector("#call_archibald");
+
+call_archibald_element.addEventListener('click', function(){
+    alert(`🧙‍♂️ J'arrive, j'arrive Aventurier !`);
+});
+
+//or
+
+// function showAlert(){
+//     alert(`🧙‍♂️ J'arrive, j'arrive Aventurier !`);
+// }
+// call_archibald_element.addEventListener('click', showAlert);
+
