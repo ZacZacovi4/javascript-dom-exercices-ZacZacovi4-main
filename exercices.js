@@ -9,3 +9,8 @@ const div_description_boutique_element = document.querySelector("#description_bo
 const new_description_boutique_element = document.createElement('p');
 new_description_boutique_element.textContent = "Pour cela, il vous suffit de cliquer sur une des potions de la liste ci-dessous pour l'acheter.";
 div_description_boutique_element.appendChild(new_description_boutique_element);
+
+// exo 3 Roger, enfoiré !
+
+const span_element = document.querySelector("#blague_de_roger_le_sorcier");
+span_element.remove();
