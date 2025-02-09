@@ -30,3 +30,38 @@ call_archibald_element.addEventListener('click', function(){
 // }
 // call_archibald_element.addEventListener('click', showAlert);
 
+// exo 5 Faisons un peu de magie 🪄
+
+const button_red_element = document.querySelector("#btn_change_red");
+const button_blue_element = document.querySelector("#btn_change_blue");
+const button_green_element = document.querySelector("#btn_change_green");
+
+const all_carre_element = document.querySelectorAll("#boites_magique .boite");
+const first_carre_element = all_carre_element[0];
+const second_carre_element = all_carre_element[1];
+const third_carre_element = all_carre_element[2];
+
+
+function oneColorChange(element, color){
+    element.style.backgroundColor = color;
+}
+button_red_element.addEventListener('click', function(){
+    oneColorChange(first_carre_element, "red");
+});
+
+button_blue_element.addEventListener('click', function(){
+    oneColorChange(first_carre_element, "blue");
+    oneColorChange(second_carre_element, "blue");
+});
+
+function allColorChange(element){
+    element.forEach(el => {
+        el.style.backgroundColor = "green";
+    });  
+}
+button_green_element.addEventListener('click', function(){
+    allColorChange(all_carre_element);
+});
+
+
+
