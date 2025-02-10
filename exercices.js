@@ -76,13 +76,17 @@ const potions = [
       description: "Un liquide bleu nuit qui sent la lavande et les rêves. Une goutte et vous dormirez comme un bébé dragon ! Attention: ne pas utiliser si vous devez combattre un troll dans les prochaines 8 heures.",
       prix: 50,
     },
-  ];
+];
 
-  const liste_potion_element = document.querySelector("#liste_potions");
+function afficherPotions(){
 
-  const template_potion_element = document.querySelector("#template_potion");
+const liste_potion_element = document.querySelector("#liste_potions");
 
-  potions.forEach(potion => {
+const template_potion_element = document.querySelector("#template_potion");
+
+liste_potion_element.innerHTML = '';
+
+potions.forEach(potion => {
   
     const cloned_template = template_potion_element.content.cloneNode(true);
 
@@ -91,6 +95,28 @@ const potions = [
     cloned_template.querySelector('.card-text.description_potion').textContent = potion.prix;
 
     liste_potion_element.appendChild(cloned_template);
-  });
+});
+}
+afficherPotions();
 
-  
+//exo 7 Plus de potions, nous avons besoin de plus de potions !
+
+function addPotions(nom, description, prix){
+    potions.push({nom, description, prix });
+    afficherPotions();
+}
+
+const form_element = document.querySelector(".form");
+form_element.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form_element);
+    
+    const nom = formData.get('nom');
+    const description = formData.get('description');
+    const prix = formData.get('prix');
+
+    addPotions(nom, description, prix);
+
+    form_element.reset();
+});
